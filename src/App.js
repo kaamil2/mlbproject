@@ -1,9 +1,7 @@
 import './App.css';
-
-/*
-import React, {useRef} from "react";
-*/
-
+import React from "react";
+import Navbar from './components/Navbar';
+import Predict from './components/Predict';
 //TODO: use the api i have created to project the png of the graph
 
 
@@ -36,9 +34,7 @@ function App() {
 
     return (
         <div className="App">
-            <header className="App-header">
-                <h1>Hello This will be the MLB place </h1>
-                <h2>Here is the graph</h2>
+            <Navbar />
 
                 {/*<img src={logo} className="App-logo" alt="logo" />
                 <p>
@@ -52,7 +48,6 @@ function App() {
                 >
                     Learn React
                 </a>*/}
-            </header>
         </div>
     );
 }
