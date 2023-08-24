@@ -1,7 +1,6 @@
 import './App.css';
 import React from "react";
-import Navbar from './components/Navbar';
-import Predict from './components/Predict';
+import Navbar from './components/Navbar/Navbar.js';
 //TODO: use the api i have created to project the png of the graph
 
 
