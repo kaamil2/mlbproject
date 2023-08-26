@@ -1,11 +1,29 @@
 import './App.css';
 import React from "react";
 import Navbar from './components/Navbar/Navbar.js';
+import Predict from './pages/Predict';
+import Compare from './pages/Compare';
+import About from './pages/About';
 //TODO: use the api i have created to project the png of the graph
 
 
 
 function App() {
+    let component
+    switch (window.location.pathname) {
+        case "/":
+            component = <Predict />
+            break
+        case "/predict":     
+            component = <Predict />
+            break
+        case "/compare":
+            component = <Compare />     
+            break
+        case "/about":
+            component = <About />
+            break
+    }
 
     /*const [images, setImages] = useState([]);
 
@@ -34,7 +52,7 @@ function App() {
     return (
         <div className="App">
             <Navbar />
-
+            {component}
                 {/*<img src={logo} className="App-logo" alt="logo" />
                 <p>
                     Edit <code>src/App.js</code> and save to reload.
