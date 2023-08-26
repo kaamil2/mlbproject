@@ -12,7 +12,10 @@ class Navbar extends Component {
     render() {
         return(
             <nav className='NavbarItems'>
-                <h1 className='navbar-logo'>React<i className='fab fa-react'></i></h1>
+                <div className='navbar-logo'>
+                    <img style={{ width: 70, height: 70 }} src={require('/Users/vamshipagidi/Development/ReactProjects/mlbproject/src/components/Navbar/images/logo.jpg')} alt='logo'></img>
+                </div>
+                <text className='navbar-title'>Competing Risks of MLB Draft Data</text>
                 <div className='menu-icon' onClick={this.handleClick}>
                     <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                 </div>

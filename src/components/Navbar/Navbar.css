@@ -12,11 +12,8 @@
     justify-self: start;
     margin: 20px;
     cursor: pointer;
-}
-
-.fa-react {
-    margin-left: 0.5rem;
-    font-size: 1.6rem;
+    margin-top: 25px;
+    margin-left: 25px;
 }
 
 .nav-menu {
@@ -37,8 +34,8 @@
 }
 
 .nav-links:hover {
-    background-color: rgb(101, 101, 101);
-    border-radius: 4px;
+    color: red;
+    border-radius: 22px;
     transition: all 0.2s ease-out;
 }
 
@@ -54,7 +51,12 @@
     display: none;
 }
 
+.navbar-title {
+    font-weight: 800;
+}
+
 * {
     color: white;
     text-decoration: none;
+    white-space: nowrap;
 }
