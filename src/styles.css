@@ -9,11 +9,14 @@ body {
 .nav{
     background-color: #292929;
     color: white;
-    display: flex;
+    display: block;
+    height: 110px;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
     padding: 0 1rem;
+
 }
 
 .site-title {
