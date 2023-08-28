@@ -114,15 +114,15 @@ function App() {
                             label: "reachMLB",
                             //result.data.map((item, index) => [item['reachMLB']]).filter( Number )
                             data: reachedMLB,
-                            borderColor: "black",
-                            backgroundColor: "green",
+                            borderColor: "blue",
+                            backgroundColor: "black",
                             stepped: true,
                         },
                         {
                             label: "retire",
                             data: retired,
-                            borderColor: "green",
-                           //backgroundColor: "red",
+                            borderColor: "maroon",
+                           backgroundColor: "red",
                             fill: false,
                             stepped: true,
 
@@ -138,7 +138,7 @@ function App() {
                         title: {
                             display: true,
                             text: "MLB Draft Probability"
-                     }
+                     },
                     }
                 })
             })
