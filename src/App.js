@@ -7,9 +7,9 @@ import About from './pages/About';
 import MlbData from './mlbDraftPlotData.csv';
 import Papa from 'papaparse';
 import {useEffect, useState} from 'react';
-import {Bar} from 'react-chartjs-2';
+//import {Bar} from 'react-chartjs-2';
 import { Line } from 'react-chartjs-2';
-import OscarData from './oscar_age_male.csv';
+//import OscarData from './oscar_age_male.csv';
 /*import {
     Chart as ChartJS,
     CategoryScale,
@@ -59,7 +59,7 @@ ChartJS.register(
 
 
 function App() {
-    const data = {
+   /* const data = {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [
             {
@@ -80,7 +80,7 @@ function App() {
                 stepped: true,
             }
         ]
-    }
+    }*/
 
     const[chartData, setChartData] = useState({
         datasets: []
@@ -146,19 +146,15 @@ function App() {
     }, [])
 
     let component
-    switch (window.location.pathname) {
-        case "/":
-            component = <Predict />
-            break
-        case "/predict":
-            component = <Predict />
-            break
-        case "/compare":
-            component = <Compare />
-            break
-        case "/about":
-            component = <About />
-            break
+    //TODO add a default case for the switch statement
+    if (window.location.pathname === "/") {
+        component = <Predict/>
+    } else if (window.location.pathname === "/predict") {
+        component = <Predict/>
+    } else if (window.location.pathname === "/compare") {
+        component = <Compare/>
+    } else if (window.location.pathname === "/about") {
+        component = <About/>
     }
 
     /*const [images, setImages] = useState([]);
