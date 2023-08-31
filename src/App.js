@@ -1,5 +1,5 @@
 import './App.css';
-import React, {Component} from "react";
+//import React, {Component} from "react";
 import Navbar from './components/Navbar/Navbar.js';
 import Predict from './pages/Predict';
 import Compare from './pages/Compare';
@@ -7,19 +7,11 @@ import About from './pages/About';
 import MlbData from './mlbDraftPlotData.csv';
 import Papa from 'papaparse';
 import {useEffect, useState} from 'react';
-//import {Bar} from 'react-chartjs-2';
 import { Line } from 'react-chartjs-2';
 
 //import OscarData from './oscar_age_male.csv';
-/*import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
-    Tooltip,
-    Legend,
-}*/
+/*
+
 import {
     Chart as ChartJS,
     LineElement,
@@ -35,14 +27,6 @@ import {
 
 //import Bar from "react-chartjs2/example/Components/Bar";
 
-/*ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
-    Tooltip,
-    Legend,
-)*/
 
 ChartJS.register(
     LineElement,
@@ -54,12 +38,13 @@ ChartJS.register(
     Legend,
     Tooltip
 )
+*/
 
 
 //TODO: use the api i have created to project the png of the graph
 
 function App() {
-    const [name, setName] = useState('');
+   /* const [name, setName] = useState('');
     const [greeting, setGreeting] = useState('');
 
     const handleChange = (event) => {
@@ -73,30 +58,6 @@ function App() {
             .then(data => setGreeting(data.greeting));
     };
 
-
-
-   /* const data = {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [
-            {
-
-                label: 'My First Dataset',
-                data: [30, 59, 80, 81, 56, 55, 40],
-                fill: false,
-                borderColor: 'rgb(75, 192, 192)',
-                tension: 0.1,
-                stepped: true,
-            },
-            {
-                label: 'My Second Dataset',
-                data: [10, 20, 30, 40, 50, 60, 70],
-                fill: false,
-                borderColor: 'rgb(75, 192, 192)',
-                tension: 0.1,
-                stepped: true,
-            }
-        ]
-    }*/
 
     const[chartData, setChartData] = useState({
         datasets: []
@@ -159,7 +120,7 @@ function App() {
                 })
             })
         })
-    }, [])
+    }, [])*/
 
     let component
     //TODO add a default case for the switch statement
@@ -173,29 +134,7 @@ function App() {
         component = <About/>
     }
 
-    /*const [images, setImages] = useState([]);
 
-    const inputRef = useRef(null);
-
-    const varRef = useRef(images.length);
-
-    useEffect(() => {
-
-        axios.get('https://kaamil2.github.io', {
-            /!*params: {
-                o1: 1,
-                b1: 10,
-                t1: "4Yr",
-                p1: "Bat",
-                a5: false
-            }*!/
-        })
-            .then((res) => {
-                //setImages(res.data);
-                console.log(res.data);
-                // handle success
-            })
-    }, []);*/
 
     return (
         <div className="App">
@@ -204,10 +143,10 @@ function App() {
                 <h1>MLB Draft Data</h1>
                 {
                         <div>
-                            <Line options={chartOptions} data={chartData} />
+                            {/*<Line options={chartOptions} data={chartData} />*/}
                         </div>
                 }
-            </div>
+            {/*</div>
             <div>
                 <form onSubmit={handleSubmit}>
                     <label>
@@ -216,7 +155,7 @@ function App() {
                     </label>
                     <button type="submit">Submit</button>
                 </form>
-                <p>{greeting}</p>
+                <p>{greeting}</p>*/}
             </div>
             {component}
                 {/*<img src={logo} className="App-logo" alt="logo" />
