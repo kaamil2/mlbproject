@@ -1,5 +1,5 @@
 import './App.css';
-import React from "react";
+import React, {Component} from "react";
 import Navbar from './components/Navbar/Navbar.js';
 import Predict from './pages/Predict';
 import Compare from './pages/Compare';
@@ -9,6 +9,7 @@ import Papa from 'papaparse';
 import {useEffect, useState} from 'react';
 //import {Bar} from 'react-chartjs-2';
 import { Line } from 'react-chartjs-2';
+
 //import OscarData from './oscar_age_male.csv';
 /*import {
     Chart as ChartJS,
@@ -31,6 +32,7 @@ import {
     Tooltip
 }
     from 'chart.js';
+
 //import Bar from "react-chartjs2/example/Components/Bar";
 
 /*ChartJS.register(
@@ -56,9 +58,23 @@ ChartJS.register(
 
 //TODO: use the api i have created to project the png of the graph
 
-
-
 function App() {
+    const [name, setName] = useState('');
+    const [greeting, setGreeting] = useState('');
+
+    const handleChange = (event) => {
+        setName(event.target.value);
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        fetch(`/api/greeting?name=${encodeURIComponent(name)}`)
+            .then(response => response.json())
+            .then(data => setGreeting(data.greeting));
+    };
+
+
+
    /* const data = {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [
@@ -191,6 +207,16 @@ function App() {
                             <Line options={chartOptions} data={chartData} />
                         </div>
                 }
+            </div>
+            <div>
+                <form onSubmit={handleSubmit}>
+                    <label>
+                        Name:
+                        <input type="text" value={name} onChange={handleChange} />
+                    </label>
+                    <button type="submit">Submit</button>
+                </form>
+                <p>{greeting}</p>
             </div>
             {component}
                 {/*<img src={logo} className="App-logo" alt="logo" />
