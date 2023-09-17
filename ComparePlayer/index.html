@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html> 
+
+<head>
+    <meta charset=utf-8/>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Research Project</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="js/d3.v6.1.1/d3.min.js"></script>
+
+</head>
+
+<body>
+    <div class="top">
+        <h1>MLB Drafted</h1>  
+        <h2>Player Risk Comparision</h2>
+    <div>
+
+    <div class="options">
+        <p class = "text">Select Player 1:</p>
+            <select id="name_dropdown1">
+                <option value="">--Please select a name--</option>
+            </select>
+
+        <p class = "text">Select Player 2:</p>
+            <select id="name_dropdown2">
+                <option value="">--Please select a name--</option>
+            </select>
+    </div>
+    
+    <!-- Visualizations -->
+    <div class="row">
+            <div class = "column">
+                <div id="plot1">
+                    <p>Plot 1: Predicted Risk for Reaching MLB</p>
+                </div>
+            </div>
+
+            <div class = "column">
+                <div id="plot2">
+                    <p>Plot 2: Predicted Risk for Retirement</p>
+                </div>
+            </div>
+    </div>
+
+    
+
+    </div>
+       <h2 class="title">Acknowledgements</h2>
+    <div>
+      <ul>
+        <li>...</li>
+      </ul>
+    </div>
+
+    <!-- Include js at end of body -->
+    <script src="main.js"></script>
+    
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+* {
+  font-family: 'Optima';
+}
+
+#bold-stat {
+  font-weight: bold ;
+}
+
+head {
+font-family: arial;
+}
+
+h1 {
+text-align: center;
+}
+h2 {
+  text-align: center;
+
+}
+
+
+body {
+font-family: arial;
+}
+
+.column {
+  float: left;
+  width: 48%;
+  flex: 1;
+  border: 2px solid black;
+  padding: 10px; 
+}
+
+.top {
+  border: 2px solid black;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  text-align: center;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: lightgreen;
+  border:  solid;
+  border-width: 2px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.listening-rect {
+  fill: transparent;
+}

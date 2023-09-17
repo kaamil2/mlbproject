@@ -1,5 +1,5 @@
 import './App.css';
-import React from "react";
+//import React, {Component} from "react";
 import Navbar from './components/Navbar/Navbar.js';
 import Predict from './pages/Predict';
 import Compare from './pages/Compare';
@@ -7,18 +7,11 @@ import About from './pages/About';
 import MlbData from './mlbDraftPlotData.csv';
 import Papa from 'papaparse';
 import {useEffect, useState} from 'react';
-import {Bar} from 'react-chartjs-2';
 import { Line } from 'react-chartjs-2';
-import OscarData from './oscar_age_male.csv';
-/*import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
-    Tooltip,
-    Legend,
-}*/
+
+//import OscarData from './oscar_age_male.csv';
+/*
+
 import {
     Chart as ChartJS,
     LineElement,
@@ -31,16 +24,9 @@ import {
     Tooltip
 }
     from 'chart.js';
+
 //import Bar from "react-chartjs2/example/Components/Bar";
 
-/*ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
-    Tooltip,
-    Legend,
-)*/
 
 ChartJS.register(
     LineElement,
@@ -52,35 +38,26 @@ ChartJS.register(
     Legend,
     Tooltip
 )
+*/
 
 
 //TODO: use the api i have created to project the png of the graph
 
-
-
 function App() {
-    const data = {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [
-            {
+   /* const [name, setName] = useState('');
+    const [greeting, setGreeting] = useState('');
 
-                label: 'My First Dataset',
-                data: [30, 59, 80, 81, 56, 55, 40],
-                fill: false,
-                borderColor: 'rgb(75, 192, 192)',
-                tension: 0.1,
-                stepped: true,
-            },
-            {
-                label: 'My Second Dataset',
-                data: [10, 20, 30, 40, 50, 60, 70],
-                fill: false,
-                borderColor: 'rgb(75, 192, 192)',
-                tension: 0.1,
-                stepped: true,
-            }
-        ]
-    }
+    const handleChange = (event) => {
+        setName(event.target.value);
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        fetch(`/api/greeting?name=${encodeURIComponent(name)}`)
+            .then(response => response.json())
+            .then(data => setGreeting(data.greeting));
+    };
+
 
     const[chartData, setChartData] = useState({
         datasets: []
@@ -143,47 +120,21 @@ function App() {
                 })
             })
         })
-    }, [])
+    }, [])*/
 
     let component
-    switch (window.location.pathname) {
-        case "/":
-            component = <Predict />
-            break
-        case "/predict":
-            component = <Predict />
-            break
-        case "/compare":
-            component = <Compare />
-            break
-        case "/about":
-            component = <About />
-            break
+    //TODO add a default case for the switch statement
+    if (window.location.pathname === "/") {
+        component = <Predict/>
+    } else if (window.location.pathname === "/predict") {
+        component = <Predict/>
+    } else if (window.location.pathname === "/compare") {
+        component = <Compare/>
+    } else if (window.location.pathname === "/about") {
+        component = <About/>
     }
 
-    /*const [images, setImages] = useState([]);
 
-    const inputRef = useRef(null);
-
-    const varRef = useRef(images.length);
-
-    useEffect(() => {
-
-        axios.get('https://kaamil2.github.io', {
-            /!*params: {
-                o1: 1,
-                b1: 10,
-                t1: "4Yr",
-                p1: "Bat",
-                a5: false
-            }*!/
-        })
-            .then((res) => {
-                //setImages(res.data);
-                console.log(res.data);
-                // handle success
-            })
-    }, []);*/
 
     return (
         <div className="App">
@@ -192,9 +143,19 @@ function App() {
                 <h1>MLB Draft Data</h1>
                 {
                         <div>
-                            <Line options={chartOptions} data={chartData} />
+                            {/*<Line options={chartOptions} data={chartData} />*/}
                         </div>
                 }
+            {/*</div>
+            <div>
+                <form onSubmit={handleSubmit}>
+                    <label>
+                        Name:
+                        <input type="text" value={name} onChange={handleChange} />
+                    </label>
+                    <button type="submit">Submit</button>
+                </form>
+                <p>{greeting}</p>*/}
             </div>
             {component}
                 {/*<img src={logo} className="App-logo" alt="logo" />
